@@ -1,0 +1,33 @@
+Módulos:
+
+crio um arquivo, coloco a função ou o que ele deve fazer
+no lugar de var, coloca module.exports.variavel = função
+e em outro arquivo chama var nome da variavel = require('./nome_do_arquivo);
+
+module.exports VS exports VS this:
+
+todos apontam para a mesma referência.
+
+apenas o module.exports é retornado da função require.
+
+se usar o exports ou this, não pode usar o module.exports
+==================================================================
+Tudo que declara dentro de um módulo, torna-se privado a ele
+==================================================================
+Variavel global: não utiliza o var
+
+global/GLOBAL.variavel = 100;
+
+OBS: se eu apenas colocar o nome da variavel e o valor, ela é global, portanto cuidado para não esquecer de colocar var quando for private
+====================================================================
+Quero utilizar max em varios lugares
+
+exports.max = 1000; //no arquivo config
+
+e importar:  
+//no arquivo seila
+var config = require('./config'); //importando o max para este arquivo
+
+exports.generate = function(){
+    return Math.floor(Math.random() * config.max);
+}

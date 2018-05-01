@@ -1,0 +1,44 @@
+setTimeout:
+
+console.log('A' + new Date());
+setTimeout(function(){
+   console.log('B' + new Date());
+},3000);
+============================================
+Reverso:
+
+setTimeout(function(){
+   console.log('B' + new Date());
+},3000);
+console.log('A' + new Date());
+=============================================
+Cancelar timer:
+
+var a = setTimeout(function(){
+    console.log('A' + new Date());
+},3000);
+var b = setTimeout(function(){
+    console.log('B' + new Date());
+},3000);
+clearTimeout(a);
+//Cancela o (a) antes de executar, exemplo é a caixa de busca
+================================================================
+Executando em intervalos:
+
+var interval = function (callback, time){
+    setTimeout(function(){
+        callback();
+	interval(callback, time);
+    },time);
+};
+
+interval(function(){
+    console.log('R' + new Date());
+},1000);
+====================================================================
+Executando em intervalos mais facil:
+
+setInterval(function(){
+   console.log('I' + new Date());
+},1000);
+====================================================================

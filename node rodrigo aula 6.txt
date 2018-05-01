@@ -1,0 +1,16 @@
+Standard Streams:
+
+STD: canais de comunicação para entrada e saída
+
+Input(entrada) - Output(saida) - Error(saida)
+
+Porque tem output e error: eles podem ser tratados e redirecionados de forma diferente.
+
+node console.log 1> out.log (aparece o B do error, pq pega o A do output)
+
+node console.log 2> out.log (aparece o A)
+======================================================================
+
+Verificar com quem estamos interagindo, se é TTY ou teletype, o terminal ou teclado, ou PTY ou pseudo-teletype, que se refere a algum tipo de software como telnet, ssh ou xterm.
+
+Buffer (representa o conjunto de bits do que está digitando)
